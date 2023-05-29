@@ -195,13 +195,13 @@ def page_2():
     
     input_data=pd.DataFrame(input_data,columns=cols)
     
-    with open('insurance_claim_classifier.pkl', 'rb') as f:
-        insurance_claim_classifier = pickle.load(f)
+    with open('Insurance_claim_classifier.pkl', 'rb') as f:
+        Insurance_claim_classifier = pickle.load(f)
 
     min_threshold=0.30800962
 
     if st.button("Predict Insurance Claim"):
-        prediction=(insurance_claim_classifier.predict_proba(input_data)[:,1]>min_threshold).astype('float')[0]
+        prediction=(Insurance_claim_classifier.predict_proba(input_data)[:,1]>min_threshold).astype('float')[0]
         if prediction == 0:
             st.markdown("<h2 style='text-align: center; color: green;'>This person will not claim car insurance </h2>", unsafe_allow_html=True)
         else:
