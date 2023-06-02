@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[21]:
+# In[2]:
 
 
 import streamlit as st
@@ -66,15 +66,15 @@ def page_2():
 
 ##Torque
     torq_nm,torq_rpm=st.columns(2)
-    torq_nm=st.slider('Select Max Torque Nm',50.0,500.0,1.0)
-    torq_rpm=st.slider('Select Max Torque Rpm',1000.0,5000.0,1.0)
+    torq_nm=st.slider('Select Max Torque Nm',min_value=50.0,max_value=500.0,step=1.0)
+    torq_rpm=st.slider('Select Max Torque Rpm',min_value=1000.0,max_value=5000.0,step=1.0)
     data['torq_nm']=torq_nm
     data['torq_rpm']=torq_rpm
     
 ##Power
     power_bhp,power_rpm=st.columns(2)
-    power_bhp=st.slider('Select Max Power bhp',30.0,500.0,1.0)
-    power_rpm=st.slider('Select Max Power rpm',2000,10000,1000)
+    power_bhp=st.slider('Select Max Power bhp',min_value=30.0,max_value=500.0,step=1.0)
+    power_rpm=st.slider('Select Max Power rpm',min_value=2000,max_value=10000,step=1000)
     data['power_bhp']=power_bhp
     data['power_rpm']=power_rpm
 
@@ -125,10 +125,10 @@ def page_2():
 
 ##Dimensions of Car
     length,width,height,weight=st.columns(4)
-    length=st.slider('Length(mm)',3000,5000,1)
-    width=st.slider('Width(mm)',1300,2000,1)
-    height=st.slider('Height(mm)',1300,2000,1)
-    weight=st.slider('Weight(kg)',1000,2000,1)
+    length=st.slider('Length(mm)',min_value=3000,max_value=5000,step=1)
+    width=st.slider('Width(mm)',min_value=1300,max_value=2000,step=1)
+    height=st.slider('Height(mm)',min_value=1300,max_value=2000,step=1)
+    weight=st.slider('Weight(kg)',min_value=1000,max_value=2000,step=1)
     data['length']=length
     data['width']=width
     data['height']=height
